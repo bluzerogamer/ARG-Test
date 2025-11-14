@@ -1,0 +1,1 @@
+var colors = ["Blue", "Red", "Yellow", "Green", "Purple"]

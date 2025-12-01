@@ -110,7 +110,7 @@ function dragEnd() {
 
 function crushSymbol() {
     //crushFive();
-    //crushFour();
+    crushFour();
     crushThree();
     document.getElementById("score").innerText = score;
 }
@@ -147,7 +147,86 @@ function crushThree() {
     }
 }
 
+function crushFour() {
+    //check rows
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < columns-3; c++) {
+            let symbol1 = board[r][c];
+            let symbol2 = board[r][c+1];
+            let symbol3 = board[r][c+2];
+            let symbol4 = board[r][c+3];
+            if (symbol1.src == symbol2.src && symbol2.src == symbol3.src && symbol3.src == symbol4.src && !symbol1.src.includes("Blank")) {
+                symbol1.src = "./images/Blank.png";
+                symbol2.src = "./images/Blank.png";
+                symbol3.src = "./images/Blank.png";
+                symbol4.src = "./images/Blank.png";
+                score += 40;
+            }
+        }
+    }
+
+    //check columns
+    for (let c = 0; c < columns; c++) {
+        for (let r = 0; r < rows-3; r++) {
+            let symbol1 = board[r][c];
+            let symbol2 = board[r+1][c];
+            let symbol3 = board[r+2][c];
+            let symbol4 = board[r+3][c];
+            if (symbol1.src == symbol2.src && symbol2.src == symbol3.src && symbol3.src == symbol4.src && !symbol1.src.includes("Blank")) {
+                symbol1.src = "./images/Blank.png";
+                symbol2.src = "./images/Blank.png";
+                symbol3.src = "./images/Blank.png";
+                symbol4.src = "./images/Blank.png";
+                score += 40;
+            }
+        }
+    }
+}
+
+function crushFive() {
+    //check rows
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < columns-4; c++) {
+            let symbol1 = board[r][c];
+            let symbol2 = board[r][c+1];
+            let symbol3 = board[r][c+2];
+            let symbol4 = board[r][c+3];
+            let symbol5 = board[r][c+4];
+            if (symbol1.src == symbol2.src && symbol2.src == symbol3.src && symbol3.src == symbol4.src && symbol4.src == symbol5.src && !symbol1.src.includes("Blank")) {
+                symbol1.src = "./images/Blank.png";
+                symbol2.src = "./images/Blank.png";
+                symbol3.src = "./images/Blank.png";
+                symbol4.src = "./images/Blank.png";
+                symbol5.src = "./images/Blank.png";
+                score += 50;
+            }
+        }
+    }
+
+    //check columns
+    for (let c = 0; c < columns; c++) {
+        for (let r = 0; r < rows-4; r++) {
+            let symbol1 = board[r][c];
+            let symbol2 = board[r+1][c];
+            let symbol3 = board[r+2][c];
+            let symbol4 = board[r+3][c];
+            let symbol5 = board[r+4][c];
+            if (symbol1.src == symbol2.src && symbol2.src == symbol3.src && symbol3.src == symbol4.src && symbol4.src == symbol5.src && !symbol1.src.includes("Blank")) {
+                symbol1.src = "./images/Blank.png";
+                symbol2.src = "./images/Blank.png";
+                symbol3.src = "./images/Blank.png";
+                symbol4.src = "./images/Blank.png";
+                symbol5.src = "./images/Blank.png";
+                score += 50;
+            }
+        }
+    }
+}
+
 function checkValid () {
+
+    //MATCH 3
+
     //check rows
     for (let r = 0; r < rows; r++) {
         for (let c = 0; c < columns-2; c++) {
@@ -155,7 +234,10 @@ function checkValid () {
             let symbol2 = board[r][c+1];
             let symbol3 = board[r][c+2];
             if (symbol1.src == symbol2.src && symbol2.src == symbol3.src && !symbol1.src.includes("Blank")) {
-                return true;
+                symbol1.src = "./images/Blank.png";
+                symbol2.src = "./images/Blank.png";
+                symbol3.src = "./images/Blank.png";
+                score += 30;
             }
         }
     }
@@ -167,7 +249,84 @@ function checkValid () {
             let symbol2 = board[r+1][c];
             let symbol3 = board[r+2][c];
             if (symbol1.src == symbol2.src && symbol2.src == symbol3.src && !symbol1.src.includes("Blank")) {
-                return true;
+                symbol1.src = "./images/Blank.png";
+                symbol2.src = "./images/Blank.png";
+                symbol3.src = "./images/Blank.png";
+                score += 40;
+            }
+        }
+    }
+
+    //MATCH 4
+
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < columns-3; c++) {
+            let symbol1 = board[r][c];
+            let symbol2 = board[r][c+1];
+            let symbol3 = board[r][c+2];
+            let symbol4 = board[r][c+3];
+            if (symbol1.src == symbol2.src && symbol2.src == symbol3.src && symbol3.src == symbol4.src && !symbol1.src.includes("Blank")) {
+                symbol1.src = "./images/Blank.png";
+                symbol2.src = "./images/Blank.png";
+                symbol3.src = "./images/Blank.png";
+                symbol4.src = "./images/Blank.png";
+                score += 40;
+            }
+        }
+    }
+
+    //check columns
+    for (let c = 0; c < columns; c++) {
+        for (let r = 0; r < rows-3; r++) {
+            let symbol1 = board[r][c];
+            let symbol2 = board[r+1][c];
+            let symbol3 = board[r+2][c];
+            let symbol4 = board[r+3][c];
+            if (symbol1.src == symbol2.src && symbol2.src == symbol3.src && symbol3.src == symbol4.src && !symbol1.src.includes("Blank")) {
+                symbol1.src = "./images/Blank.png";
+                symbol2.src = "./images/Blank.png";
+                symbol3.src = "./images/Blank.png";
+                symbol4.src = "./images/Blank.png";
+                score += 40;
+            }
+        }
+    }
+
+    //MATCH 5
+
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < columns-4; c++) {
+            let symbol1 = board[r][c];
+            let symbol2 = board[r][c+1];
+            let symbol3 = board[r][c+2];
+            let symbol4 = board[r][c+3];
+            let symbol5 = board[r][c+4];
+            if (symbol1.src == symbol2.src && symbol2.src == symbol3.src && symbol3.src == symbol4.src && symbol4.src == symbol5.src && !symbol1.src.includes("Blank")) {
+                symbol1.src = "./images/Blank.png";
+                symbol2.src = "./images/Blank.png";
+                symbol3.src = "./images/Blank.png";
+                symbol4.src = "./images/Blank.png";
+                symbol5.src = "./images/Blank.png";
+                score += 50;
+            }
+        }
+    }
+
+    //check columns
+    for (let c = 0; c < columns; c++) {
+        for (let r = 0; r < rows-4; r++) {
+            let symbol1 = board[r][c];
+            let symbol2 = board[r+1][c];
+            let symbol3 = board[r+2][c];
+            let symbol4 = board[r+3][c];
+            let symbol5 = board[r+4][c];
+            if (symbol1.src == symbol2.src && symbol2.src == symbol3.src && symbol3.src == symbol4.src && symbol4.src == symbol5.src && !symbol1.src.includes("Blank")) {
+                symbol1.src = "./images/Blank.png";
+                symbol2.src = "./images/Blank.png";
+                symbol3.src = "./images/Blank.png";
+                symbol4.src = "./images/Blank.png";
+                symbol5.src = "./images/Blank.png";
+                score += 50;
             }
         }
     }
